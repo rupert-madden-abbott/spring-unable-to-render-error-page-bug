@@ -2,7 +2,6 @@ package com.github.rma.utrepb;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,7 +17,7 @@ public class ExampleController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/unsecure-error")
+    @GetMapping("/unsecure-error")
     public ResponseEntity<Void> unsecureError() {
         throw new RuntimeException();
     }

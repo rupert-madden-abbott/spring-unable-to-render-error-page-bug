@@ -71,7 +71,7 @@ class AuthorizeHttpRequestsTest {
     @Test
     void shouldReturnInternalServerErrorWhenUnauthenticatedAccessToUnsecuredErrorEndpoint() {
         ResponseEntity<String> entity = testRestTemplate
-                .postForEntity("/unsecure-error", null, String.class);
+                .getForEntity("/unsecure-error", null, String.class);
 
         assertThat(entity)
                 .extracting(ResponseEntity::getStatusCode)
